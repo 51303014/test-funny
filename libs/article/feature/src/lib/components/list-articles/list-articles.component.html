@@ -1,0 +1,10 @@
+<ng-container *ngIf="articles?.length; else noPosts;">
+    <funny-article-item
+        *ngFor="let item of articles"
+        [article]="item"
+        ></funny-article-item>
+</ng-container>
+
+<ng-template #noPosts>
+    <ng-container>Nothing to display.</ng-container>
+</ng-template>

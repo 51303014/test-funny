@@ -1,0 +1,33 @@
+<div class="editor-page">
+    <div class="container page">
+        <div class="row">
+            <div class="col-md-10 offset-md-1 col-xs-12">
+                <form [formGroup]="form" (ngSubmit)="form.valid && submit()">
+                  <div id="info-block">
+                    <section class="file-marker">
+                      <div>
+                        <div class="box-title">
+                          Share a youtube movie
+                        </div>
+                        <div class="box-contents">
+                          <div id="audit-trail">
+                              <label for="furl">Youtube URL: </label>
+                              <input class="width-lg mg-s" formControlName="url"  type="text" id="furl" name="furl"><br><br>
+<!--                              <input type="text" class="form-control" placeholder="Article Title" formControlName="title" name="title">-->
+
+                            <button class="btn width-lg mg-l btn-primary justify-content-center" type="submit">
+                              Publish Article
+                            </button>
+
+                          </div>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>
