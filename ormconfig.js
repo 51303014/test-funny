@@ -7,7 +7,7 @@ module.exports = {
   username: 'sql6405909',
   password: 'uLX6AZai91',
   database: 'sql6405909',
-  synchronize: false,
+  synchronize: true,
   entities: getMetadataArgsStorage().tables.map(tbl => tbl.target),
   timezone: 'Z',
   bigNumberStrings: false,
