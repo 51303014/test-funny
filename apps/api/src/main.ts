@@ -22,7 +22,8 @@ async function bootstrap() {
   app.use(morgan('combined', { stream: accessLogStream }))
 
   const configs = app.get<ApiConfigService>('ApiConfigService').configs
-  const port = configs.port || 3333;
+  // const port = configs.port || 3333;
+  const port = process.env.PORT || 3333;
   await app.listen(port, () => {
     Logger.log(`Listening at ${configs.host || 'http://localhost'}:${configs.port}/${globalPrefix}`);
   });
