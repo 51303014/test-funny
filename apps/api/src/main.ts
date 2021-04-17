@@ -4,8 +4,8 @@ import { ApiConfigService } from '@realworld/shared/api/config';
 
 import { AppModule } from './app/app.module';
 
-var morgan = require('morgan')
-var rfs = require('rotating-file-stream') 
+const morgan = require('morgan')
+const rfs = require('rotating-file-stream')
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
@@ -14,8 +14,8 @@ async function bootstrap() {
   app.setGlobalPrefix(globalPrefix);
 
   app.use(morgan('dev'))
-  
-  var accessLogStream = rfs.createStream('access.log', {
+
+  const accessLogStream = rfs.createStream('access.log', {
     interval: '1d', // rotate daily
     path: './log'
   })

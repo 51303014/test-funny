@@ -3,7 +3,7 @@ const packageJson = require('../../../../package.json')
 
 export const environment: IApiConfig = {
   production: false,
-  applicationName: 'Sen Viet API',
+  applicationName: 'API',
   host: 'http://localhost',
   port: 3333,
   version: packageJson.version,

@@ -7,7 +7,7 @@ export const environment: Partial<IConfiguration> = {
   production: true,
   debug: false,
   rest: {
-    url: 'http://localhost:3333/api'
+    url: 'https://funny-ashen.vercel.app/api'
   },
   logging: {
     sendToCentralizedServer: true,
