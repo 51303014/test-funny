@@ -18,13 +18,10 @@ export class ArticleApiHandlersController {
 
   @Post('videos')
   async create(@Req() req, @Body() data: Partial<INewArticle>): Promise<IResponse<IArticle>> {
-    console.log(data);
     const video: Partial<Video> = {
       ...data,
       authorId: req?.user?.sub
     };
-    console.log(video, req.user);
-
     await this.videoService.insert(video);
     return new ActionSuccessResponse<IArticle>({
       message: CREATED_MSG,
@@ -45,7 +42,7 @@ export class ArticleApiHandlersController {
       }
     }
 
-    const options = mapQueriesToFindManyOptions<Video>(query, 'url', 'shortDescription');
+    const options = mapQueriesToFindManyOptions<Video>(query, 'url');
     const res = await this.videoService.findAll(options);
     return new ListSuccessResponse<IArticle>({
       listData: await Promise.all(res.map(a => this.mapToResponseArticle(jwtInfo?.sub, a))),

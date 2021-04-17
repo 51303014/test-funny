@@ -36,5 +36,8 @@ export class EditorComponent implements OnInit {
     const data = this.form.value
     const promise = this.videoService.create(data).pipe(take(1)).toPromise()
     const res = await promise
+    if (res) {
+      this.router.navigate(['/'])
+    }
   }
 }
