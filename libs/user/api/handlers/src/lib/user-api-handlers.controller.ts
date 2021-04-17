@@ -49,9 +49,9 @@ export class UserApiHandlersController {
     }
 
     @SkipAuth()
-    @Get('profiles/:username')
-    async getProfile(@Req() req, @Param('username') username: string): Promise<IResponse<IProfile>> {
-        const user = await this.userService.findOne({username: username})
+    @Get('profiles/:email')
+    async getProfile(@Req() req, @Param('username') email: string): Promise<IResponse<IProfile>> {
+        const user = await this.userService.findOne({email: email})
         if (!user) {
             throw new NotFoundException()
         }

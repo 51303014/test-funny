@@ -29,7 +29,7 @@ const config: ToastNotificationsConfig = {
   ],
   providers: [
     DatePipe,
-    CurrencyPipe, 
+    CurrencyPipe,
     DecimalPipe,
   ]
 })

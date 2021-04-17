@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { IUserService } from '@realworld/user/shared';
-import { IArticleService } from '@realworld/article/shared';
 import { IArticle } from '@realworld/article/api-interfaces';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take } from 'rxjs/operators';
+import { IVideoQuery, IVideoService } from '@realworld/article/shared';
 
 @Component({
   selector: 'funny-home',
@@ -15,15 +15,16 @@ export class HomeComponent implements OnInit {
 
   constructor(
     public userService: IUserService,
-    private articleService: IArticleService,
+    private videoService: IVideoService,
   ) {}
 
-  ngOnInit() {
-    this.dataSource = this.articleService.getAll({
+  async ngOnInit() {
+    const user = (await this.userService.getCurrentUser().pipe(take(1)).toPromise())?.detailData
+    this.dataSource = this.videoService.getAll({
       limit: 10,
       pageIndex: 0,
       order: {orderBy: 'createdAt' as any, orderType: 'desc'}
-  }, null).pipe(map(res => res.data))
+  }, <IVideoQuery>{author: user.email}).pipe(map(res => res.data))
 
   }
 }

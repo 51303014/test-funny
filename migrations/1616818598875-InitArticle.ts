@@ -12,36 +12,18 @@ export class InitArticle1616818598875 implements MigrationInterface {
 
     private async initArticleTable(queryRunner: QueryRunner) {
         await queryRunner.createTable(new Table({
-            name: 'article',
+            name: 'video',
             columns: [
                 ...DEFAULT_COLUMNS,
                 {
-                    name: 'slug',
-                    type: 'varchar',
-                    length: '250',
-                    isUnique: true,
-                },
-                {
-                    name: 'title',
+                    name: 'url',
                     type: 'varchar',
                     length: '200'
-                },
-                {
-                    name: 'description',
-                    type: 'text',
-                },
-                {
-                    name: 'body',
-                    type: 'text',
                 },
                 {
                     name: 'authorId',
                     type: 'varchar',
                     length: '255',
-                },
-                {
-                    name: 'tagList',
-                    type: 'json',
                 },
             ],
             indices: [{name: 'id-index', columnNames: ['id']}],

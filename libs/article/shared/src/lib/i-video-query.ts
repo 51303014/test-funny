@@ -1,6 +1,6 @@
 import { IQuery } from '@realworld/shared/foundation';
 
-export interface IArticleQuery extends IQuery {
+export interface IVideoQuery extends IQuery {
     tag: string
     favorited: string
     author: string

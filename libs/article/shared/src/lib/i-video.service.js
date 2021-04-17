@@ -23,7 +23,7 @@ exports.IArticleService = void 0;
 var core_1 = require("@angular/core");
 var foundation_1 = require("@realworld/shared/foundation");
 var article_service_1 = require("./article.service");
-var IArticleService = /** @class */ (function (_super) {
+var IVideoService = /** @class */ (function (_super) {
     __extends(IArticleService, _super);
     function IArticleService() {
         return _super !== null && _super.apply(this, arguments) || this;
@@ -36,4 +36,4 @@ var IArticleService = /** @class */ (function (_super) {
     ], IArticleService);
     return IArticleService;
 }(foundation_1.IBaseDataService));
-exports.IArticleService = IArticleService;
+exports.IArticleService = IVideoService;

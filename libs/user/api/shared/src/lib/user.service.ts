@@ -23,14 +23,13 @@ export class UserService extends BaseService<User> {
         let user = await this.validateUser(data.email, data.password)
         return {
             ...user as IUser,
-            token: await this.generateJWTToken({sub: user.id, email: user.email, username: user.username}),
+            token: await this.generateJWTToken({sub: user.id, email: user.email}),
         }
     }
 
     async register(data: INewUser) {
         const existingUser = await this.findOne(null, {where: [
             {email: data.email.toLowerCase()},
-            {username: data.username.toLowerCase()}
         ]})
 
         if (existingUser) {
@@ -43,7 +42,7 @@ export class UserService extends BaseService<User> {
         return {
             ...user,
             password: null,
-            token: await this.generateJWTToken({sub: user.id, email: user.email, username: user.username}),
+            token: await this.generateJWTToken({sub: user.id, email: user.email}),
         }
     }
 
@@ -65,13 +64,13 @@ export class UserService extends BaseService<User> {
         return {
             ...newUserInfo,
             password: null,
-            token: await this.generateJWTToken({sub: userId, email: newUserInfo.email, username: newUserInfo.username}),
+            token: await this.generateJWTToken({sub: userId, email: newUserInfo.email}),
         }
     }
 
     async getProfile(requestUserId: string, user: User): Promise<IProfile> {
         return {
-            username: user.username,
+            email: user.email,
             bio: user.bio,
             image: user.image,
             following: null,
@@ -88,14 +87,14 @@ export class UserService extends BaseService<User> {
         }
 
         // strip out unnecessary fields
-        const {password, email, username, bio, image, id, ..._} = user
+        const {password, email, bio, image, id, ..._} = user
 
         const validPass = await bcrypt.compare(passwordLogin, password)
         if(!validPass) {
             throw new BadRequestException(INVALID_ACCOUNT_MSG)
         }
 
-        return { id, email, username, bio, image }
+        return { id, email, bio, image }
     }
 
     private async hashPassword(raw: string): Promise<string> {
@@ -105,7 +104,6 @@ export class UserService extends BaseService<User> {
     private async generateJWTToken(data: {
         sub: string
         email: string,
-        username: string
     }): Promise<string> {
         return this.jwtService.sign(data)
     }

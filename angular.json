@@ -1,7 +1,8 @@
 {
   "version": 1,
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": false
   },
   "defaultProject": "funny",
   "schematics": {
@@ -51,9 +52,14 @@
               "apps/funny/src/favicon.ico",
               "apps/funny/src/assets"
             ],
-            "styles": ["apps/funny/src/styles.scss"],
+            "styles": [
+              "apps/funny/src/styles.scss"
+            ],
             "scripts": [],
-            "allowedCommonJsDependencies": ["r7insight_js", "validator"]
+            "allowedCommonJsDependencies": [
+              "r7insight_js",
+              "validator"
+            ]
           },
           "configurations": {
             "production": {
@@ -113,7 +119,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/funny"],
+          "outputs": [
+            "coverage/apps/funny"
+          ],
           "options": {
             "jestConfig": "apps/funny/jest.config.js",
             "passWithNoTests": true
@@ -142,7 +150,9 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/funny-e2e/**/*.{js,ts}"]
+            "lintFilePatterns": [
+              "apps/funny-e2e/**/*.{js,ts}"
+            ]
           }
         }
       }
@@ -155,12 +165,16 @@
       "architect": {
         "build": {
           "builder": "@nrwl/node:build",
-          "outputs": ["{options.outputPath}"],
+          "outputs": [
+            "{options.outputPath}"
+          ],
           "options": {
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -185,12 +199,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["apps/api/**/*.ts"]
+            "lintFilePatterns": [
+              "apps/api/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/apps/api"],
+          "outputs": [
+            "coverage/apps/api"
+          ],
           "options": {
             "jestConfig": "apps/api/jest.config.js",
             "passWithNoTests": true
@@ -206,12 +224,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/core/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/core/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/core"],
+          "outputs": [
+            "coverage/libs/shared/api/core"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/core/jest.config.js",
             "passWithNoTests": true
@@ -227,12 +249,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/constants/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/constants/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/constants"],
+          "outputs": [
+            "coverage/libs/shared/api/constants"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/constants/jest.config.js",
             "passWithNoTests": true
@@ -248,12 +274,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/error-handler/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/error-handler/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/error-handler"],
+          "outputs": [
+            "coverage/libs/shared/api/error-handler"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/error-handler/jest.config.js",
             "passWithNoTests": true
@@ -269,12 +299,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/foundation/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/foundation/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/foundation"],
+          "outputs": [
+            "coverage/libs/shared/api/foundation"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/foundation/jest.config.js",
             "passWithNoTests": true
@@ -290,12 +324,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/config/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/config/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/config"],
+          "outputs": [
+            "coverage/libs/shared/api/config"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/config/jest.config.js",
             "passWithNoTests": true
@@ -311,12 +349,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/api/validations/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/api/validations/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/api/validations"],
+          "outputs": [
+            "coverage/libs/shared/api/validations"
+          ],
           "options": {
             "jestConfig": "libs/shared/api/validations/jest.config.js",
             "passWithNoTests": true
@@ -332,12 +374,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/client-server/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/client-server/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/client-server"],
+          "outputs": [
+            "coverage/libs/shared/client-server"
+          ],
           "options": {
             "jestConfig": "libs/shared/client-server/jest.config.js",
             "passWithNoTests": true
@@ -353,12 +399,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/constants/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/constants/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/constants"],
+          "outputs": [
+            "coverage/libs/shared/constants"
+          ],
           "options": {
             "jestConfig": "libs/shared/constants/jest.config.js",
             "passWithNoTests": true
@@ -383,7 +433,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/common"],
+          "outputs": [
+            "coverage/libs/shared/common"
+          ],
           "options": {
             "jestConfig": "libs/shared/common/jest.config.js",
             "passWithNoTests": true
@@ -408,7 +460,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/configuration"],
+          "outputs": [
+            "coverage/libs/shared/configuration"
+          ],
           "options": {
             "jestConfig": "libs/shared/configuration/jest.config.js",
             "passWithNoTests": true
@@ -433,7 +487,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/directives"],
+          "outputs": [
+            "coverage/libs/shared/directives"
+          ],
           "options": {
             "jestConfig": "libs/shared/directives/jest.config.js",
             "passWithNoTests": true
@@ -458,7 +514,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/error-handler"],
+          "outputs": [
+            "coverage/libs/shared/error-handler"
+          ],
           "options": {
             "jestConfig": "libs/shared/error-handler/jest.config.js",
             "passWithNoTests": true
@@ -483,7 +541,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/foundation"],
+          "outputs": [
+            "coverage/libs/shared/foundation"
+          ],
           "options": {
             "jestConfig": "libs/shared/foundation/jest.config.js",
             "passWithNoTests": true
@@ -508,7 +568,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/interceptors"],
+          "outputs": [
+            "coverage/libs/shared/interceptors"
+          ],
           "options": {
             "jestConfig": "libs/shared/interceptors/jest.config.js",
             "passWithNoTests": true
@@ -533,7 +595,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/loading"],
+          "outputs": [
+            "coverage/libs/shared/loading"
+          ],
           "options": {
             "jestConfig": "libs/shared/loading/jest.config.js",
             "passWithNoTests": true
@@ -558,7 +622,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/logging"],
+          "outputs": [
+            "coverage/libs/shared/logging"
+          ],
           "options": {
             "jestConfig": "libs/shared/logging/jest.config.js",
             "passWithNoTests": true
@@ -583,7 +649,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/notification"],
+          "outputs": [
+            "coverage/libs/shared/notification"
+          ],
           "options": {
             "jestConfig": "libs/shared/notification/jest.config.js",
             "passWithNoTests": true
@@ -608,7 +676,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/spinner"],
+          "outputs": [
+            "coverage/libs/shared/spinner"
+          ],
           "options": {
             "jestConfig": "libs/shared/spinner/jest.config.js",
             "passWithNoTests": true
@@ -633,7 +703,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/storage"],
+          "outputs": [
+            "coverage/libs/shared/storage"
+          ],
           "options": {
             "jestConfig": "libs/shared/storage/jest.config.js",
             "passWithNoTests": true
@@ -658,7 +730,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/toaster"],
+          "outputs": [
+            "coverage/libs/shared/toaster"
+          ],
           "options": {
             "jestConfig": "libs/shared/toaster/jest.config.js",
             "passWithNoTests": true
@@ -683,7 +757,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/core"],
+          "outputs": [
+            "coverage/libs/shared/core"
+          ],
           "options": {
             "jestConfig": "libs/shared/core/jest.config.js",
             "passWithNoTests": true
@@ -699,12 +775,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/shared/string-util/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/shared/string-util/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/shared/string-util"],
+          "outputs": [
+            "coverage/libs/shared/string-util"
+          ],
           "options": {
             "jestConfig": "libs/shared/string-util/jest.config.js",
             "passWithNoTests": true
@@ -720,12 +800,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/user/api/shared/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/user/api/shared/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user/api/shared"],
+          "outputs": [
+            "coverage/libs/user/api/shared"
+          ],
           "options": {
             "jestConfig": "libs/user/api/shared/jest.config.js",
             "passWithNoTests": true
@@ -741,12 +825,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/user/api/handlers/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/user/api/handlers/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user/api/handlers"],
+          "outputs": [
+            "coverage/libs/user/api/handlers"
+          ],
           "options": {
             "jestConfig": "libs/user/api/handlers/jest.config.js",
             "passWithNoTests": true
@@ -762,12 +850,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/user/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/user/api-interfaces/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user/api-interfaces"],
+          "outputs": [
+            "coverage/libs/user/api-interfaces"
+          ],
           "options": {
             "jestConfig": "libs/user/api-interfaces/jest.config.js",
             "passWithNoTests": true
@@ -792,7 +884,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user/feature"],
+          "outputs": [
+            "coverage/libs/user/feature"
+          ],
           "options": {
             "jestConfig": "libs/user/feature/jest.config.js",
             "passWithNoTests": true
@@ -817,7 +911,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/user/shared"],
+          "outputs": [
+            "coverage/libs/user/shared"
+          ],
           "options": {
             "jestConfig": "libs/user/shared/jest.config.js",
             "passWithNoTests": true
@@ -833,12 +929,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/article/api/shared/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/article/api/shared/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/article/api/shared"],
+          "outputs": [
+            "coverage/libs/article/api/shared"
+          ],
           "options": {
             "jestConfig": "libs/article/api/shared/jest.config.js",
             "passWithNoTests": true
@@ -854,12 +954,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/article/api/handlers/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/article/api/handlers/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/article/api/handlers"],
+          "outputs": [
+            "coverage/libs/article/api/handlers"
+          ],
           "options": {
             "jestConfig": "libs/article/api/handlers/jest.config.js",
             "passWithNoTests": true
@@ -875,12 +979,16 @@
         "lint": {
           "builder": "@nrwl/linter:eslint",
           "options": {
-            "lintFilePatterns": ["libs/article/api-interfaces/**/*.ts"]
+            "lintFilePatterns": [
+              "libs/article/api-interfaces/**/*.ts"
+            ]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/article/api-interfaces"],
+          "outputs": [
+            "coverage/libs/article/api-interfaces"
+          ],
           "options": {
             "jestConfig": "libs/article/api-interfaces/jest.config.js",
             "passWithNoTests": true
@@ -905,7 +1013,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/article/shared"],
+          "outputs": [
+            "coverage/libs/article/shared"
+          ],
           "options": {
             "jestConfig": "libs/article/shared/jest.config.js",
             "passWithNoTests": true
@@ -930,7 +1040,9 @@
         },
         "test": {
           "builder": "@nrwl/jest:jest",
-          "outputs": ["coverage/libs/article/feature"],
+          "outputs": [
+            "coverage/libs/article/feature"
+          ],
           "options": {
             "jestConfig": "libs/article/feature/jest.config.js",
             "passWithNoTests": true

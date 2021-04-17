@@ -3,12 +3,12 @@ import { Injectable } from '@angular/core';
 import { IArticle } from '@realworld/article/api-interfaces';
 import { IConfigurationService } from '@realworld/shared/configuration';
 import { BaseDataService  } from '@realworld/shared/foundation';
-import { IArticleService } from './i-article.service';
+import { IVideoService } from './i-video.service';
 
 @Injectable()
-export class ArticleService extends BaseDataService<IArticle> implements IArticleService {
+export class VideoService extends BaseDataService<IArticle> implements IVideoService {
     protected get endpoint(): string {
-        return 'articles'
+        return 'videos'
     }
 
     constructor(

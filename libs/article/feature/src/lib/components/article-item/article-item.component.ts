@@ -11,8 +11,10 @@ export class ArticleItemComponent implements OnInit {
   @Input() article: IArticle
 
   @Output() toggleFavorite = new EventEmitter<{favorite: boolean, slug: string}>()
+  safeSrc: string;
 
   constructor() {
+
   }
 
   async ngOnInit() {

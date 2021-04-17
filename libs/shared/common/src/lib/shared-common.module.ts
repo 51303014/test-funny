@@ -12,7 +12,7 @@ import { ControlErrorsDirectiveModule, FormSubmitDirectiveModule } from '@realwo
     ReactiveFormsModule,
     FormSubmitDirectiveModule,
     ControlErrorsDirectiveModule,
-    RouterModule
+    RouterModule,
   ]
 })
 export class SharedCommonModule {}

@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { IArticleService } from '@realworld/article/shared';
 import { IUserService } from '@realworld/user/shared';
 import { take } from 'rxjs/operators';
+import { IVideoService } from '../../../../shared/src/lib/i-video.service';
 
 @Component({
   selector: 'funny-editor',
@@ -15,7 +15,7 @@ export class EditorComponent implements OnInit {
 
   constructor(
     public userService: IUserService,
-    private articleService: IArticleService,
+    private videoService: IVideoService,
     private router: Router,
     private route: ActivatedRoute,
     private fb: FormBuilder,
@@ -34,7 +34,7 @@ export class EditorComponent implements OnInit {
 
   async submit() {
     const data = this.form.value
-    const promise = this.articleService.create(data).pipe(take(1)).toPromise()
+    const promise = this.videoService.create(data).pipe(take(1)).toPromise()
     const res = await promise
   }
 }

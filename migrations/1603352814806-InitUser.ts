@@ -21,12 +21,6 @@ export class InitUser1603352814806 implements MigrationInterface {
                     length: '60'
                 },
                 {
-                    name: 'username',
-                    type: 'varchar',
-                    isUnique: true,
-                    length: '60'
-                },
-                {
                     name: 'password',
                     type: 'varchar',
                     length: '255'
@@ -42,7 +36,7 @@ export class InitUser1603352814806 implements MigrationInterface {
                     isNullable: true
                 },
             ],
-            indices: [{name: 'username-email-index', columnNames: ['username', 'email']}],
+            indices: [{name: 'username-email-index', columnNames: ['email']}],
             engine: DB_ENGINE.MYISAM
         }))
     }

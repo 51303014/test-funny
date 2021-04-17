@@ -27,7 +27,7 @@ export class RegisterComponent {
     private fb: FormBuilder,
     private router: Router,
     private title: Title
-  ) { 
+  ) {
     this.initForm()
   }
 
@@ -37,7 +37,6 @@ export class RegisterComponent {
 
   private initForm() {
     this.form = this.fb.group({
-      username: [null, [Validators.required, Validators.maxLength(60)]],
       email: [null, [Validators.required, CustomValidators.email, Validators.maxLength(60)]],
       password: [null, [Validators.required, Validators.maxLength(200)]],
     })
