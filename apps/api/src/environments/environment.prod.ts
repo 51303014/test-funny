@@ -4,7 +4,7 @@ const packageJson = require('../../../../package.json')
 export const environment: IApiConfig = {
   production: true,
   applicationName: 'API',
-  host: 'http://localhost',
+  host: 'https://remi-funny-api.herokuapp.com',
   port: 3333,
   version: packageJson.version,
   debug: true,
